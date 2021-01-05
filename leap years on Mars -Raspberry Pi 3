@@ -1,0 +1,94 @@
+#leap years on Mars 
+# PYTHON-UCBE
+#Python3-program
+CODE = {' ': ' ',     
+        "'": '.----.',      
+        '(': '-.--.-',     
+        ')': '-.--.-',       
+        ',': '--..--',     
+        '-': '-....-',       
+        '.': '.-.-.-',    
+        '/': '-..-.',     
+        '0': '-----',     
+        '1': '.----',     
+        '2': '..---',     
+        '3': '...--',     
+        '4': '....-',     
+        '5': '.....',   
+        '6': '-....',      
+        '7': '--...',   
+        '8': '---..',     
+        '9': '----.',    
+        ':': '---...',   
+        ';': '-.-.-.',     
+        '?': '..--..',     
+        'A': '.-',       
+        'B': '-...',      
+        'C': '-.-.',    
+        'D': '-..',      
+        'E': '.',     
+        'F': '..-.',     
+        'G': '--.',     
+        'H': '....',   
+        'I': '..',    
+        'J': '.---',     
+        'K': '-.-',     
+        'L': '.-..',    
+        'M': '--',     
+        'N': '-.',      
+        'O': '---',      
+        'P': '.--.',     
+        'Q': '--.-',     
+        'R': '.-.',      
+        'S': '...',     
+        'T': '-',      
+        'U': '..-',     
+        'V': '...-',   
+        'W': '.--',   
+        'X': '-..-',     
+        'Y': '-.--',      
+        'Z': '--..',    
+        '_': '..--.-'}
+        
+        # Import the GPIO and time libraries 
+        import RPi.GPIO as GPIO
+        import time 
+        # Set the pin designation type.
+        # In this case, we use boards numbering scheme. 
+        GPIO.setmode(GPIO.BOARD)
+        GPIO.setup(11, GPIO.OUT)                #declare the pin wehere the LED is plugg in
+       
+        def dot():   
+        GPIO.output(11,True)    
+        time.sleep(0.1)    
+        GPIO.output(11,False)    
+        time.sleep(0.1)
+        
+        def dash():    
+        GPIO.output(11,True)    
+        time.sleep(0.6)    
+        GPIO.output(11,False)    
+        time.sleep(0.1)
+        
+        def space():   
+        GPIO.output(11,False)   
+        time.sleep(1.1) 
+        
+        def morse_code(sentence):    
+        sentence = sentence.upper()    
+        codedSentence = ""          
+        for character in sentence:                             
+        codedSentence += CODE[character] + " "     
+        return codedSentence
+        
+        while True:    
+        sentence = input("enter text to convert to morse code:")
+        codedSentence = morse_code(sentence)   
+        print(codedSentence)    
+        for i in codedSentence:       
+            if i == '.':            
+               dot()        
+           elif i == '-':           
+               dash()        
+           else:           
+               space()
