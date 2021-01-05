@@ -1,1 +1,1 @@
-# PYTHON-UCBE
+Some basic exercises for Python
