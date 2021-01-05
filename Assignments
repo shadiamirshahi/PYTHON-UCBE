@@ -1,0 +1,6 @@
+# PYTHON-UCBE
+#Python3-program
+#Celsius-to-Fahrenheit-Conversion
+Celsius=float(input(" Enter the temperature in Celsius: "))
+f=(Celsius*1.8)+32
+print( " Temperature in Fahrenheit is: " + str( f ))
