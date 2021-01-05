@@ -1,0 +1,6 @@
+#radius-of-a-circle-in-inches.
+# PYTHON-UCBE
+#Python3-program
+Celsius=float(input(" Enter the temperature in Celsius: "))
+f=(Celsius*1.8)+32
+print( " Temperature in Fahrenheit is: " + str( f ))
