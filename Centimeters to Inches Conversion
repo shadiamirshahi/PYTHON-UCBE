@@ -1,0 +1,7 @@
+#Centimeters to Inches Conversion
+# PYTHON-UCBE
+#Python3-program
+centimeters=float(input("Please enter a number in centimeters:"))
+cm_to_inch=0.3937
+inches=centimeters*cm_to_inch
+print( "Value in inches is:" ,round(inches, 2))
