@@ -1,0 +1,22 @@
+#Aloop that reads each line of a file
+#count the number of characters in each line
+#keep track of the total number of characters read
+
+filetxt = '/home/py/files' 
+try: 
+    f = open(filetxt,'r') 
+
+except IOError: 
+    print("Couldn't open  %s" % (filetxt))
+
+txt = f.readlines()
+f.close()
+
+chrcounter = 0
+totalnum = 0
+for item in txt:
+    chrcounter += len(item)
+    totalnum += 1 
+    if chrcounter >= 1000:
+        break
+print ("Characters :" , chrcounter , "\nTotal Number of characters read :", totalnum)
