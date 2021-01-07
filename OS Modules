@@ -1,0 +1,15 @@
+#A script that will list and count all of the images in a given HTML web page/file.
+
+import re, urllib.request
+
+def listandcount(url):
+    total  = 0
+    f=urllib.request.urlopen(url)
+    web = f.readlines()
+    for i in web:
+        pat  = len(re.findall('<img.*?>', str(i)))
+        total += 1
+    print('HTML web name : {0} / Total images: {1}'.format(url, total))
+
+listandcount("https://www.apple.com")
+listandcount("http://yahoo.com")
