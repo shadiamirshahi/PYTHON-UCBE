@@ -1,0 +1,13 @@
+#Using os.walk
+#write a script that will print the filenames of zero length files
+#print the count of zero length files
+import os
+
+total = 0
+zerofile = []
+for root, directory, files in os.walk('.'):
+    size = (os.path.getsize(os.path.join(root,file)) for file in files)
+    if size == 0: 
+       total += 1
+print("filenames of zero length files :", zerofile)
+print("Count of zero length files :", total)
